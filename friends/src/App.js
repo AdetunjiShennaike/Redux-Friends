@@ -1,28 +1,29 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+//import components 
+import loginPage from './view/loginPage'
+import friendPage from './view/friendPage'
+
+//import routers
+import { BrowserRouter as Router, Route, Link, NavLink } from 'react-router-dom'
+import PrivateRoute from './components/privateRoute'
+
+let App = () =>  {
+  return (
+    <Router> 
+      <div classname='container'>
+        <nav>
+          <NavLink to='/login'>Login</NavLink>
+          <NavLink to='/friendslist'>Home</NavLink>
+        </nav>
+
+        <Route path='/login' component={loginPage}/>
+        <PrivateRoute exact path='/friendslist' component={friendPage}/>
       </div>
-    );
-  }
+    </Router>
+  )
+  
 }
 
 export default App;
