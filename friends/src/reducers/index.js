@@ -25,7 +25,8 @@ export const reducerFriend = (state = initialState, action) => {
     case LOGIN_SUCCESS:
       return {
         ...state,
-        
+        error: '',
+        loggingIn: false
       }
     case FETCH: 
       return {
@@ -40,6 +41,7 @@ export const reducerFriend = (state = initialState, action) => {
         error: '',
         friends: action.payload
       }
+
     case FAIL:
     default: 
       return state
