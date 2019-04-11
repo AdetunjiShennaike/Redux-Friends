@@ -5,7 +5,7 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 
 //import reducer
-import reducer from './reducers'
+import rootReducer from './reducers'
 
 //provider import, along with store and middleware
 import { Provider } from 'react-redux'
@@ -16,7 +16,7 @@ import logger from 'redux-logger'
 
 //apply middleware inside of the store as well as the reducer
 const store = createStore(
-  reducer,
+  rootReducer,
   applyMiddleware( thunk, logger )
 )
 
