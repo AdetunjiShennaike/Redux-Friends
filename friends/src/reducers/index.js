@@ -1,14 +1,32 @@
 //import the action names 
-import { SUCCESS, FAIL, FETCH } from '../actions'
+import { SUCCESS, FAIL, FETCH, LOGIN_FAIL, LOGIN_START, LOGIN_SUCCESS } from '../actions'
+import { start } from 'repl';
 
 const initialState = {
   friends: [],
   fetching: false,
-  error: ''
+  loggingIn: false,
+  deletingFriend: false,
+  fetchingFriends: false,
+  savingFriends: false,
+  updatingFriend: false,
+  error: null
 }
 
 export const reducerFriend = (state = initialState, action) => {
   switch (action.type) {
+    case LOGIN_START:
+      return {
+        ...state,
+        error: '',
+        fetching: false,
+        loggingIn: true,
+      }
+    case LOGIN_SUCCESS:
+      return {
+        ...state,
+        
+      }
     case FETCH: 
       return {
         ...state,

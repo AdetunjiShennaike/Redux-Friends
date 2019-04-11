@@ -1,6 +1,8 @@
 //import axios to grab server data
 import axios from 'axios'
 
+import axiosAuth from '../authentication'
+
 //export actions types
 export let FETCH = 'FETCH'
 export let SUCCESS = 'SUCCESS'
@@ -18,3 +20,4 @@ export const grabData = () => dispatch => {
     dispatch({ type: FAIL, payload: err })
   })
 }
+
