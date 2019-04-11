@@ -14,6 +14,7 @@ import { createStore, applyMiddleware } from 'redux'
 import thunk from 'redux-thunk'
 import logger from 'redux-logger'
 
+//apply middleware inside of the store as well as the reducer
 const store = createStore(
   reducer,
   applyMiddleware( thunk, logger )
